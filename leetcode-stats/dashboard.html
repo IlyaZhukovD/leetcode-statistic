@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>LeetCode статистика</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <main>
+    <header class="top">
+      <h1>LeetCode статистика</h1>
+      <div class="status" id="status"></div>
+    </header>
+
+    <section class="panel range">
+      <div class="field">
+        <label for="start">С</label>
+        <input type="date" id="start">
+      </div>
+      <div class="field">
+        <label for="end">По</label>
+        <input type="date" id="end">
+      </div>
+      <label class="check"><input type="checkbox" id="toNow"> по сегодня</label>
+      <div class="presets">
+        <button data-preset="7">7 дней</button>
+        <button data-preset="30">30 дней</button>
+        <button data-preset="month">Этот месяц</button>
+        <button data-preset="year">Этот год</button>
+      </div>
+      <div class="spacer"></div>
+      <button class="primary" id="sync">Обновить с LeetCode</button>
+    </section>
+
+    <section class="cards" id="cards"></section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Задачи по дням</h2>
+        <div class="legend">
+          <span><i class="dot easy"></i>Easy</span>
+          <span><i class="dot medium"></i>Medium</span>
+          <span><i class="dot hard"></i>Hard</span>
+        </div>
+      </div>
+      <div class="chart" id="chart"></div>
+      <div class="tooltip" id="tooltip" hidden></div>
+    </section>
+
+    <section class="panel">
+      <h2>Список задач</h2>
+      <div id="list"></div>
+    </section>
+
+    <footer>
+      <button class="link" id="reset">Очистить локальный кэш</button>
+    </footer>
+  </main>
+  <script src="stats.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+</html>
